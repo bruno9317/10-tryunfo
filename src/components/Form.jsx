@@ -1,7 +1,22 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Form extends Component {
   render() {
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
+      hasTrunfo,
+      isSaveButtonDisabled,
+      onInputChange,
+      onSaveButtonClick,
+    } = this.props;
     return (
       <>
         <div>
@@ -10,6 +25,8 @@ class Form extends Component {
             <input
               type="text"
               name="name"
+              value={ cardName }
+              onChange={ onInputChange }
               data-testid="name-input"
             />
           </label>
@@ -19,6 +36,8 @@ class Form extends Component {
             Descrição:
             <textarea
               name="description"
+              value={ cardDescription }
+              onChange={ onInputChange }
               data-testid="description-input"
             />
           </label>
@@ -29,6 +48,8 @@ class Form extends Component {
             <input
               type="number"
               name="attribute1"
+              value={ cardAttr1 }
+              onChange={ onInputChange }
               data-testid="attr1-input"
             />
           </label>
@@ -39,6 +60,8 @@ class Form extends Component {
             <input
               type="number"
               name="attribute2"
+              value={ cardAttr2 }
+              onChange={ onInputChange }
               data-testid="attr2-input"
             />
           </label>
@@ -49,6 +72,8 @@ class Form extends Component {
             <input
               type="number"
               name="attribute3"
+              value={ cardAttr3 }
+              onChange={ onInputChange }
               data-testid="attr3-input"
             />
           </label>
@@ -59,6 +84,8 @@ class Form extends Component {
             <input
               type="text"
               name="image"
+              value={ cardImage }
+              onChange={ onInputChange }
               data-testid="image-input"
             />
           </label>
@@ -66,7 +93,12 @@ class Form extends Component {
         <div>
           <label htmlFor="rarity">
             Escolha a raridade:
-            <select name="rarity" data-testid="rare-input">
+            <select
+              name="rarity"
+              value={ cardRare }
+              onChange={ onInputChange }
+              data-testid="rare-input"
+            >
               <option value="normal">Normal</option>
               <option value="raro">Raro</option>
               <option value="muito raro">Muito Raro</option>
@@ -76,19 +108,44 @@ class Form extends Component {
         <div>
           <label htmlFor="SuperTrunfo">
             <input
-              type="checkbox"
-              name="SuperTrunfo"
               data-testid="trunfo-input"
+              name="SuperTrunfo"
+              type="checkbox"
+              value={ cardTrunfo }
+              onChange={ onInputChange }
+              checked
             />
             SuperTrunfo
           </label>
         </div>
         <div>
-          <button type="button" data-testid="save-button">Salvar</button>
+          <button
+            type="button"
+            disabled={ isSaveButtonDisabled }
+            onClick={ onSaveButtonClick }
+            data-testid="save-button"
+          >
+            Salvar
+          </button>
         </div>
       </>
     );
   }
 }
+
+Form.propTypes = {
+  cardName: PropTypes.string.isRequired,
+  cardDescription: PropTypes.string.isRequired,
+  cardAttr1: PropTypes.string.isRequired,
+  cardAttr2: PropTypes.string.isRequired,
+  cardAttr3: PropTypes.string.isRequired,
+  cardImage: PropTypes.string.isRequired,
+  cardRare: PropTypes.string.isRequired,
+  cardTrunfo: PropTypes.bool.isRequired,
+  hasTrunfo: PropTypes.bool.isRequired,
+  isSaveButtonDisabled: PropTypes.bool.isRequired,
+  onInputChange: PropTypes.func.isRequired,
+  onSaveButtonClick: PropTypes.func.isRequired,
+};
 
 export default Form;
