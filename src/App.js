@@ -15,8 +15,6 @@ class App extends React.Component {
     cardTrunfo: false,
     hasTrunfo: false,
     isSaveButtonDisabled: true,
-    // onInputChange,
-    // onSaveButtonClick,
     cardColection: [],
   };
 
@@ -78,7 +76,6 @@ class App extends React.Component {
       this.setState({ hasTrunfo: true });
     }
 
-    console.log(cardColection);
     this.setState({ cardName: '',
       cardDescription: '',
       cardAttr1: '0',
@@ -102,6 +99,7 @@ class App extends React.Component {
       cardTrunfo,
       hasTrunfo,
       isSaveButtonDisabled,
+      cardColection,
     } = this.state;
     return (
       <div>
@@ -130,6 +128,22 @@ class App extends React.Component {
           cardTrunfo={ cardTrunfo }
           isSaveButtonDisabled={ isSaveButtonDisabled }
         />
+        <section>
+          {cardColection.map((p) => (
+            <Card
+              key={ p.cardName }
+              cardName={ p.cardName }
+              cardDescription={ p.cardDescription }
+              cardAttr1={ p.cardAttr1 }
+              cardAttr2={ p.cardAttr2 }
+              cardAttr3={ p.cardAttr3 }
+              cardImage={ p.cardImage }
+              cardRare={ p.cardRare }
+              cardTrunfo={ p.cardTrunfo }
+              isSaveButtonDisabled={ p.isSaveButtonDisabled }
+            />
+          ))}
+        </section>
       </div>
     );
   }

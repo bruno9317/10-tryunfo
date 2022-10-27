@@ -114,19 +114,6 @@ class Form extends Component {
           </label>
         </div>
         <div>
-          {/* <label htmlFor="cardTrunfo">
-            <input
-              // defaultChecked
-              data-testid="trunfo-input"
-              name="cardTrunfo"
-              id="cardTrunfo"
-              type="checkbox"
-              value={ cardTrunfo }
-              checked={ cardTrunfo }
-              onChange={ onInputChange }
-            />
-            SuperTrunfo
-          </label> */}
           {!hasTrunfo ? (
             <label htmlFor="cardTrunfo">
               <input
