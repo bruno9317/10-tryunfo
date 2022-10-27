@@ -71,6 +71,10 @@ class App extends React.Component {
       }],
     }));
 
+    // if (isSaveButtonDisabled === false) {
+    //   this.setState({ hasButton: true });
+    // }
+
     if (cardTrunfo === true) {
       this.setState({ hasTrunfo: true });
     }
@@ -84,6 +88,17 @@ class App extends React.Component {
       cardRare: '',
       cardTrunfo: false,
       isSaveButtonDisabled: true });
+  };
+
+  deleteCard = (event) => {
+    const { cardColection } = this.state;
+    const { name } = event.target;
+    if (cardColection.filter((p) => p.cardName === name)[0].cardTrunfo === true) {
+      this.setState({ cardColection: cardColection.filter((p) => p.cardName !== name),
+        hasTrunfo: false });
+    } else {
+      this.setState({ cardColection: cardColection.filter((p) => p.cardName !== name) });
+    }
   };
 
   render() {
@@ -126,6 +141,7 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
           isSaveButtonDisabled={ isSaveButtonDisabled }
+          hasButton
         />
         <section>
           {cardColection.map((p) => (
@@ -140,6 +156,8 @@ class App extends React.Component {
               cardRare={ p.cardRare }
               cardTrunfo={ p.cardTrunfo }
               isSaveButtonDisabled={ p.isSaveButtonDisabled }
+              hasButton={ false }
+              deleteCard={ this.deleteCard }
             />
           ))}
         </section>
