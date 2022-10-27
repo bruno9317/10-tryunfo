@@ -55,8 +55,7 @@ class App extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      isSaveButtonDisabled,
-      cardColection } = this.state;
+      isSaveButtonDisabled } = this.state;
 
     this.setState((prevState) => ({
       cardColection: [...prevState.cardColection, {
