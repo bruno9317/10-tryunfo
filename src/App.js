@@ -13,7 +13,7 @@ class App extends React.Component {
     cardImage: '',
     cardRare: '',
     cardTrunfo: false,
-    // hasTrunfo: true,
+    hasTrunfo: false,
     isSaveButtonDisabled: true,
     // onInputChange,
     // onSaveButtonClick,
@@ -59,20 +59,7 @@ class App extends React.Component {
       cardTrunfo,
       isSaveButtonDisabled,
       cardColection } = this.state;
-    // console.log('ola');
-    // this.setState((prevState) => {
-    //   return {
-    //     cardColection: [...prevState.cardColection, { cardName,
-    //       cardDescription,
-    //       cardAttr1,
-    //       cardAttr2,
-    //       cardAttr3,
-    //       cardImage,
-    //       cardRare,
-    //       cardTrunfo,
-    //       isSaveButtonDisabled }],
-    //   };
-    // });
+
     this.setState((prevState) => ({
       cardColection: [...prevState.cardColection, {
         cardName,
@@ -86,6 +73,10 @@ class App extends React.Component {
         isSaveButtonDisabled,
       }],
     }));
+
+    if (cardTrunfo === true) {
+      this.setState({ hasTrunfo: true });
+    }
 
     console.log(cardColection);
     this.setState({ cardName: '',
@@ -109,7 +100,7 @@ class App extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      // hasTrunfo,
+      hasTrunfo,
       isSaveButtonDisabled,
     } = this.state;
     return (
@@ -126,6 +117,7 @@ class App extends React.Component {
           isSaveButtonDisabled={ isSaveButtonDisabled }
           onInputChange={ this.onInputChange }
           onSaveButtonClick={ this.onSaveButtonClick }
+          hasTrunfo={ hasTrunfo }
         />
         <Card
           cardName={ cardName }
