@@ -60,19 +60,33 @@ class App extends React.Component {
       isSaveButtonDisabled,
       cardColection } = this.state;
     // console.log('ola');
-    this.setState((prevState) => {
-      return {
-        cardColection: [...prevState.cardColection, { cardName,
-          cardDescription,
-          cardAttr1,
-          cardAttr2,
-          cardAttr3,
-          cardImage,
-          cardRare,
-          cardTrunfo,
-          isSaveButtonDisabled }],
-      };
-    });
+    // this.setState((prevState) => {
+    //   return {
+    //     cardColection: [...prevState.cardColection, { cardName,
+    //       cardDescription,
+    //       cardAttr1,
+    //       cardAttr2,
+    //       cardAttr3,
+    //       cardImage,
+    //       cardRare,
+    //       cardTrunfo,
+    //       isSaveButtonDisabled }],
+    //   };
+    // });
+    this.setState((prevState) => ({
+      cardColection: [...prevState.cardColection, {
+        cardName,
+        cardDescription,
+        cardAttr1,
+        cardAttr2,
+        cardAttr3,
+        cardImage,
+        cardRare,
+        cardTrunfo,
+        isSaveButtonDisabled,
+      }],
+    }));
+
     console.log(cardColection);
     this.setState({ cardName: '',
       cardDescription: '',
