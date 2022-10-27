@@ -5,15 +5,15 @@ import Form from './components/Form';
 
 class App extends React.Component {
   state = {
-    cardName: 'Bruno',
-    cardDescription: 'estuda',
-    cardAttr1: '2',
-    cardAttr2: '2',
-    cardAttr3: '2',
-    cardImage: 'caminho',
-    cardRare: 'muito raro',
+    cardName: '',
+    cardDescription: '',
+    cardAttr1: '',
+    cardAttr2: '',
+    cardAttr3: '',
+    cardImage: '',
+    cardRare: '',
     cardTrunfo: false,
-    hasTrunfo: true,
+    // hasTrunfo: true,
     isSaveButtonDisabled: true,
     // onInputChange,
     // onSaveButtonClick,
@@ -39,7 +39,7 @@ class App extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      hasTrunfo,
+      // hasTrunfo,
       isSaveButtonDisabled,
     } = this.state;
     return (
