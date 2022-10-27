@@ -106,6 +106,7 @@ class Form extends Component {
               onChange={ onInputChange }
               data-testid="rare-input"
             >
+              {/* <option value="" selected disabled hidden>Escolha Aqui</option> */}
               <option value="normal">Normal</option>
               <option value="raro">Raro</option>
               <option value="muito raro">Muito Raro</option>

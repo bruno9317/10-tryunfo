@@ -21,12 +21,29 @@ class App extends React.Component {
 
   onInputChange = (event) => {
     const { target } = event;
-    // console.log(target.name === 'cardTrunfo');
     if (target.name === 'cardTrunfo') {
       this.setState({ cardTrunfo: target.value === 'false' });
     } else {
       this.setState({ [target.name]: target.value });
     }
+    const valorTotal = 210;
+    const maiorValor = 90;
+    const somaDosAtributos = parseInt(cardAttr1.value, 10)
+    + parseInt(cardAttr2.value, 10)
+    + parseInt(cardAttr3.value, 10);
+
+    const newButtonState = cardName.value.length > 0
+    && cardDescription.value.length > 0
+    && cardImage.value.length > 0
+    && somaDosAtributos <= valorTotal
+    && parseInt(cardAttr1.value, 10) >= 0
+    && parseInt(cardAttr1.value, 10) <= maiorValor
+    && parseInt(cardAttr2.value, 10) >= 0
+    && parseInt(cardAttr2.value, 10) <= maiorValor
+    && parseInt(cardAttr3.value, 10) >= 0
+    && parseInt(cardAttr3.value, 10) <= maiorValor;
+
+    this.setState({ isSaveButtonDisabled: !newButtonState });
   };
 
   render() {
