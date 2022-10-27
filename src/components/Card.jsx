@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 export default class Card extends Component {
-  receba() {
-    if (cardTrunfo) {
-      return <h2 data-testid="trunfo-card">Super Trunfo</h2>;
-    }
-  }
-
   render() {
     const {
       cardName,
