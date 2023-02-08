@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.formComPrev{
+  display:flex;
+  flex-direction: row;
+  justify-content:space-around;
+}
+.text {
+overflow-wrap: break-word;
+}
+
+.carrrd {
+  display:flex;
+  flex-direction: row;
+  margin-top: 50px;
+}
+.carta {
+  width: 280px;
+}
+
+textarea {
+  resize: none;
+}
+
+* {
+  background-color:darkslateblue;
+  color: aliceblue;
+}

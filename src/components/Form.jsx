@@ -19,13 +19,14 @@ class Form extends Component {
     } = this.props;
     return (
       <>
-        <div>
+        <div className="col form-control-lg">
           <label htmlFor="cardName">
-            Nome:
+            Nome
             <input
               type="text"
               name="cardName"
               id="cardName"
+              className="form-control"
               value={ cardName }
               onChange={ onInputChange }
               data-testid="name-input"
@@ -34,10 +35,13 @@ class Form extends Component {
         </div>
         <div>
           <label htmlFor="cardDescription">
-            Descrição:
+            Descrição
             <textarea
               name="cardDescription"
               id="cardDescription"
+              rows="4"
+              cols="50"
+              className="form-control"
               value={ cardDescription }
               onChange={ onInputChange }
               data-testid="description-input"
@@ -46,11 +50,12 @@ class Form extends Component {
         </div>
         <div>
           <label htmlFor="cardAttr1">
-            Atributo 1:
+            Atributo 1
             <input
               type="number"
               name="cardAttr1"
               id="cardAttr1"
+              className="form-control"
               value={ cardAttr1 }
               onChange={ onInputChange }
               data-testid="attr1-input"
@@ -59,11 +64,12 @@ class Form extends Component {
         </div>
         <div>
           <label htmlFor="cardAttr2">
-            Atributo 2:
+            Atributo 2
             <input
               type="number"
               name="cardAttr2"
               id="cardAttr2"
+              className="form-control"
               value={ cardAttr2 }
               onChange={ onInputChange }
               data-testid="attr2-input"
@@ -72,11 +78,12 @@ class Form extends Component {
         </div>
         <div>
           <label htmlFor="cardAttr3">
-            Atributo 3:
+            Atributo 3
             <input
               type="number"
               name="cardAttr3"
               id="cardAttr3"
+              className="form-control"
               value={ cardAttr3 }
               onChange={ onInputChange }
               data-testid="attr3-input"
@@ -85,11 +92,12 @@ class Form extends Component {
         </div>
         <div>
           <label htmlFor="cardImage">
-            imagem:
+            imagem
             <input
               type="text"
               name="cardImage"
               id="cardImage"
+              className="form-control"
               value={ cardImage }
               onChange={ onInputChange }
               data-testid="image-input"
@@ -98,15 +106,15 @@ class Form extends Component {
         </div>
         <div>
           <label htmlFor="cardRare">
-            Escolha a raridade:
+            Escolha a raridade
             <select
               name="cardRare"
               id="cardRare"
+              className="form-control"
               value={ cardRare }
               onChange={ onInputChange }
               data-testid="rare-input"
             >
-              {/* <option value="" selected disabled hidden>Escolha Aqui</option> */}
               <option value="normal">Normal</option>
               <option value="raro">Raro</option>
               <option value="muito raro">Muito Raro</option>
@@ -122,6 +130,7 @@ class Form extends Component {
                 name="cardTrunfo"
                 id="cardTrunfo"
                 type="checkbox"
+                // className="form-control"
                 value={ cardTrunfo }
                 checked={ cardTrunfo }
                 onChange={ onInputChange }
